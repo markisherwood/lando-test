@@ -1,0 +1,22 @@
+name: my-lando-app
+recipe: drupal8
+config:
+  webroot: docroot
+  drush: path:/app/vendor/bin/drush
+  database: mariadb
+tooling:
+  blt:
+    service: appserver
+    cmd: /app/vendor/acquia/blt/bin/blt
+proxy:
+  mailhog:
+    - mail.mylandoapp.lndo.site
+  phpmyadmin:
+    - pma.mylandoapp.lndo.site
+services:
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+  phpmyadmin:
+    type: phpmyadmin
