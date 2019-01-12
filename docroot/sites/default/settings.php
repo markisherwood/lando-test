@@ -251,7 +251,9 @@ $databases = [];
  *   );
  * @endcode
  */
-$config_directories = [];
+$config_directories = [
+  'CONFIG_SYNC_DIRECTORY' => '../config/default',
+];
 
 /**
  * Settings:
@@ -280,7 +282,7 @@ $config_directories = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = file_get_contents('../salt.txt');;
 
 /**
  * Deployment identifier.
@@ -534,7 +536,7 @@ if ($settings['hash_salt']) {
  * See https://www.drupal.org/documentation/modules/file for more information
  * about securing private files.
  */
-# $settings['file_private_path'] = '';
+$settings['file_private_path'] = './files-private';
 
 /**
  * Session write interval:
@@ -765,7 +767,7 @@ $settings['entity_update_batch_size'] = 50;
  * Keep this code block at the end of this file to take full effect.
  */
 #
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}
 require DRUPAL_ROOT . "/../vendor/acquia/blt/settings/blt.settings.php";
