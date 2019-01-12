@@ -20,10 +20,10 @@ services:
       - appserver
   phpmyadmin:
     type: phpmyadmin
-  services:
-    appserver:
-      run:
-        - blt setup
+  appserver:
+    run:
+      - cd $LANDO_WEBROOT && composer install
+      - cd $LANDO_WEBROOT && blt setup
 events:
   post-db-import:
     - appserver: cd $LANDO_WEBROOT && drush cr -y
