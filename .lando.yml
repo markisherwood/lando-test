@@ -2,7 +2,7 @@ name: my-lando-app
 recipe: drupal8
 config:
   webroot: docroot
-  drush: path:/app/vendor/bin/drush
+  # drush: path:/app/vendor/bin/drush
   database: mariadb
 tooling:
   blt:
@@ -20,3 +20,13 @@ services:
       - appserver
   phpmyadmin:
     type: phpmyadmin
+  services:
+    appserver:
+      run:
+        - blt setup
+events:
+  post-db-import:
+    - appserver: cd $LANDO_WEBROOT && drush cr -y
+  post-start:
+    - appserver: cd $LANDO_MOUNT && composer install
+    - appserver: cd $LANDO_WEBROOT && blt drupal:update
