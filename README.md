@@ -52,7 +52,7 @@ $ blt
 Note the following properties of this project:
 * Primary development branch: develop
 * Local environment: #LOCAL_DEV_SITE_ALIAS
-* Local site URL: #LOCAL_DEV_URL
+* Local site URL: https://mylandoapp.lndo.site
 
 ## Working With a BLT Project
 
