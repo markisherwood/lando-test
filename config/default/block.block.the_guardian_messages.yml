@@ -1,0 +1,22 @@
+uuid: 2a142f70-d333-44dc-82d7-275088cec9f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - the_guardian
+_core:
+  default_config_hash: YqKTtloWJ8FjLtfVNfrHaK6kVgxT67lC1cJ3j6i6WLo
+id: the_guardian_messages
+theme: the_guardian
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: f31f8418-767b-4145-ab17-d4b8d6e7048a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - the_guardian
+_core:
+  default_config_hash: CyX_aDKAka2_eihevNLscCHDYrzDgIqwWzFVEFRKIww
+id: the_guardian_primary_local_tasks
+theme: the_guardian
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

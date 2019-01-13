@@ -1,0 +1,22 @@
+uuid: 8cb9afd2-64bc-40da-a242-bd52b08d6398
+langcode: en
+status: true
+dependencies:
+  theme:
+    - zurb_foundation
+_core:
+  default_config_hash: CyX_aDKAka2_eihevNLscCHDYrzDgIqwWzFVEFRKIww
+id: zurb_foundation_primary_local_tasks
+theme: zurb_foundation
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

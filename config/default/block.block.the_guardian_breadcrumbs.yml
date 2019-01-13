@@ -1,0 +1,22 @@
+uuid: 7414a2c6-91fe-44d9-89e7-c01e1f2eb7ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - the_guardian
+_core:
+  default_config_hash: 8by5KRsb7ZpmjHj0ms1d7xAG_xH54AWsOX6spDLJ59U
+id: the_guardian_breadcrumbs
+theme: the_guardian
+region: meta_header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

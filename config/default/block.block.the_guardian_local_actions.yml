@@ -1,0 +1,20 @@
+uuid: 282ae496-87bc-4bd2-bbd5-22b0527f607f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - the_guardian
+_core:
+  default_config_hash: ik4PTMlBD0MWansnSMpSXq5SUlWRJ1IVVt6C7AIbQmc
+id: the_guardian_local_actions
+theme: the_guardian
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 83362c34-00ce-4a8d-9c24-bd5239b80547
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - the_guardian
+_core:
+  default_config_hash: 80N66GdzEvwqi1m-_GZ-ulkk8AJG9beoXcZ4-pMVKjI
+id: the_guardian_content
+theme: the_guardian
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
