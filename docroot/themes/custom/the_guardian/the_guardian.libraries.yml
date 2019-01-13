@@ -1,0 +1,7 @@
+global:
+  version: VERSION
+  css:
+    base:
+      css/the_guardian.css: {}
+  js:
+    js/the_guardian.js: {}
