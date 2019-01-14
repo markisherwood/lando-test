@@ -22,11 +22,18 @@ services:
     type: phpmyadmin
   appserver:
     run:
-      - cd $LANDO_WEBROOT && composer install
-      - cd $LANDO_WEBROOT && blt setup
+      - cd $LANDO_MOUNT && composer install
+      - cd $LANDO_MOUNT && /app/vendor/bin/blt blt:init:settings
+      - cd $LANDO_MOUNT && drush @self.local sql-cli < initSite.sql
+      - cd $LANDO_MOUNT && drush @self.local updb -y
+      - cd $LANDO_MOUNT && drush @self.local cim -y
+      - cd $LANDO_MOUNT && drush @self.local cr
 events:
   post-db-import:
     - appserver: cd $LANDO_WEBROOT && drush cr -y
   post-start:
     - appserver: cd $LANDO_MOUNT && composer install
-    - appserver: cd $LANDO_WEBROOT && blt drupal:update
+    - appserver: cd $LANDO_MOUNT && /app/vendor/bin/blt blt:init:settings
+    - appserver: cd $LANDO_MOUNT && drush @self.local updb -y
+    - appserver: cd $LANDO_MOUNT && drush @self.local cim -y
+    - appserver: cd $LANDO_MOUNT && drush @self.local cr
